@@ -1,6 +1,9 @@
 # My files
 data/
-
+*.pkl
+lightning_logs/
+*.csv
+*.np
 
 
 
