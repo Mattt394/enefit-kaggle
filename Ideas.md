@@ -46,13 +46,19 @@ Have a look at training after each day
 
 
 Ideas to try before submitting:
-- Try removing features that don't add much - Didn't work :(
-- Do separate models for production and consumption - separate models didn't work, but a separate model for producer and a joint model for consumption works
-- Try linear_trees
+- ~Try removing features that don't add much~ - Didn't work :(
+- ~Do separate models for production and consumption~ - separate models didn't work, but a separate model for producer and a joint model for consumption works - Actually, for my hyperparams at least, doesn't seem to :(
+- ~Try linear_trees~ - Definitely didn't work, approached infinite loss....
 - Try Ensemble - VotingRegressor/AdaboostRegressor/StackingRegressor/BaggingRegressor
     - Try ensembling with mlens
 - ~Try target/installed_capacity for producer and target/eic_count for consumer~
-- Try implmenting retraining every 14 days or so (will need a small enough model for that)
+- Try implementing retraining every 14 days or so (will need a small enough model for that)
+    - Current idea is to train one super powerful model - my best ensemble. Then also train a smaller model EVERY SINGLE DAY and average or ensemble the predictions. One model will be more powerful, but be getting slightly out of date, and the other model will be always up to date but be super small.
+    - WORKED GREAT!
+    - RETRAINING every 14 days gave me 64.9 on last fold.
+    - Would retraining every 8 days give better results?
+    - Current Smaller model not better, need to try again. Or maybe it would be better over longer time periods? Should try submitting.
+    - Will try my big model but retraining every week or two
 
 
 
@@ -66,6 +72,9 @@ Ideas:
 - Do some exploratory analysis
 - Try out neural prophet
 - Try out transformer time series models
+
+
+
 
 
 
