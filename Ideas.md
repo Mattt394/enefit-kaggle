@@ -59,7 +59,27 @@ Ideas to try before submitting:
     - Would retraining every 8 days give better results?
     - Current Smaller model not better, need to try again. Or maybe it would be better over longer time periods? Should try submitting.
     - Will try my big model but retraining every week or two
+- New LGBM model - predict 24hrs in advance, instead of just 1. All data from last 24hrs is used as features, plus lag features for targets.
 
+
+My Final Competition Model Idea:
+The idea is that predictions degrade as they get further away from the training period, and in my testing a single model continuously retrained is much better than even an ensemble once you get to 6-months out. So, the backbone of my solution will be a single retrainable model. But that leaves a little bit of performance on the table in the periods closer to the training period. So, I'll use an ensemble that gets continuously heavier weighted towards the single model as time goes on past the training period.
+- 1st part - My retrainable single lgbm model with magic parameters
+- 2nd part - An ensemble of lgbm models (with magic params?)
+           - An ensemble of xgboost models
+           - These models are not retrained
+- Blending - Blend all these models together with a meta model
+           - Give the meta model an iteration variable so it knows how far along the prediction time-period is and it will weight the unretrainable models lower and lower as they get further away from the training period.
+
+Todo:
+- Create XGBoost model
+- Test if my other datasets are actually any good
+    - ~Add deep dive into time series exp weighted features~
+    - I have data for current magic params model on cv
+    - Need to test magic params on cv for lgbm2 (slightly more lag features + weather features) and lgbm3 (lgbm2 + ewm features) datasets
+    
+- Add second order target change features skew, etc?
+- Test new datasets on my magic hyperparams
 
 
 
