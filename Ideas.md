@@ -73,6 +73,7 @@ The idea is that predictions degrade as they get further away from the training 
 
 Todo:
 - Create XGBoost model
+    - XGB is so bad!! I'm removing my one hot encoding to see if it works better without it.
 - Test if my other datasets are actually any good
     - ~Add deep dive into time series exp weighted features~
     - I have data for current magic params model on cv
