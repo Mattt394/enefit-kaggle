@@ -121,4 +121,5 @@ Model Ensemble
     - TBATS (Trigonometric seasonality, Box-Cox transformation, ARMA errors, Trend, and Seasonal components): TBATS is specifically designed for time series with multiple seasonal periods. It can handle exogenous regressors as well.
     - Dynamic Harmonic Regression: This approach combines harmonic regression for seasonality with ARIMA for the error term. It's suitable for time series with complex seasonal patterns and allows for the inclusion of exogenous variables.
   These can be trained easily and I can retrain them every 24 hours for prediction on the next time step
+- Get neuralforecast working to do some neural predictions for me too: https://colab.research.google.com/github/Nixtla/neuralforecast/blob/main/nbs/examples/Exogenous_Variables.ipynb
 - Get AutoGluon working to do some auto ml for me
