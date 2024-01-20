@@ -78,9 +78,16 @@ Todo:
     - ~Add deep dive into time series exp weighted features~
     - I have data for current magic params model on cv
     - Need to test magic params on cv for lgbm2 (slightly more lag features + weather features) and lgbm3 (lgbm2 + ewm features) datasets
-    
-- Add second order target change features skew, etc?
-- Test new datasets on my magic hyperparams
+    - Results: Second dataset is the best!!
+- Add second order target change features skew, etc? - Nope, let's skip and come back later
+- Create blending set up
+    - Need to create ensemble model on data up to 2022-05-31
+    - And create single model for that one too
+    - Get predictions for ensemble and for single model for every day up until 2023-05-31
+    - Save predictions, retrain single model every 14/20 days
+    - Plot predictions vs true values for each model
+    - Create blending model based on plot
+ 
 
 
 
